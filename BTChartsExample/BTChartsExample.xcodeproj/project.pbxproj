@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E86EED2164D728100D0DE55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E86EED1164D728100D0DE55 /* UIKit.framework */; };
+		7E86EED4164D728100D0DE55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E86EED3164D728100D0DE55 /* Foundation.framework */; };
+		7E86EED6164D728100D0DE55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E86EED5164D728100D0DE55 /* CoreGraphics.framework */; };
+		7E86EEDC164D728100D0DE55 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E86EEDA164D728100D0DE55 /* InfoPlist.strings */; };
+		7E86EEDE164D728100D0DE55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86EEDD164D728100D0DE55 /* main.m */; };
+		7E86EEE4164D728100D0DE55 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E86EEE3164D728100D0DE55 /* Default.png */; };
+		7E86EEE6164D728100D0DE55 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E86EEE5164D728100D0DE55 /* Default@2x.png */; };
+		7E86EEE8164D728100D0DE55 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E86EEE7164D728100D0DE55 /* Default-568h@2x.png */; };
+		7E86EEFE164D730400D0DE55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86EEF5164D730400D0DE55 /* AppDelegate.m */; };
+		7E86EEFF164D730400D0DE55 /* InstrumentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86EEF7164D730400D0DE55 /* InstrumentData.m */; };
+		7E86EF00164D730400D0DE55 /* InstrumentsDateGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86EEF9164D730400D0DE55 /* InstrumentsDateGroup.m */; };
+		7E86EF01164D730400D0DE55 /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86EEFB164D730400D0DE55 /* UIColor+Random.m */; };
+		7E86EF02164D730400D0DE55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86EEFD164D730400D0DE55 /* ViewController.m */; };
+		7E86EF10164D73AC00D0DE55 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E86EF0E164D73AC00D0DE55 /* MainStoryboard.storyboard */; };
+		7E86EF31164D743B00D0DE55 /* BTBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86EF28164D743B00D0DE55 /* BTBarChart.m */; };
+		7E86EF32164D743B00D0DE55 /* BTChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86EF2A164D743B00D0DE55 /* BTChart.m */; };
+		7E86EF33164D743B00D0DE55 /* BTChartStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86EF2C164D743B00D0DE55 /* BTChartStyle.m */; };
+		7E86EF34164D743B00D0DE55 /* BTLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86EF2E164D743B00D0DE55 /* BTLineChart.m */; };
+		7E86EF37164D747400D0DE55 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E86EF25164D73D600D0DE55 /* libCorePlot-CocoaTouch.a */; };
+		7E86EF39164D74D300D0DE55 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E86EF38164D74D300D0DE55 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E86EF24164D73D600D0DE55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E86EF11164D73D000D0DE55 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		7E86EF35164D746F00D0DE55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E86EF11164D73D000D0DE55 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7E86EECD164D728100D0DE55 /* BTChartsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTChartsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E86EED1164D728100D0DE55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7E86EED3164D728100D0DE55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7E86EED5164D728100D0DE55 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7E86EED9164D728100D0DE55 /* BTChartsExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BTChartsExample-Info.plist"; sourceTree = "<group>"; };
+		7E86EEDB164D728100D0DE55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7E86EEDD164D728100D0DE55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7E86EEDF164D728100D0DE55 /* BTChartsExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BTChartsExample-Prefix.pch"; sourceTree = "<group>"; };
+		7E86EEE3164D728100D0DE55 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		7E86EEE5164D728100D0DE55 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7E86EEE7164D728100D0DE55 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7E86EEF4164D730400D0DE55 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7E86EEF5164D730400D0DE55 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7E86EEF6164D730400D0DE55 /* InstrumentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentData.h; sourceTree = "<group>"; };
+		7E86EEF7164D730400D0DE55 /* InstrumentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentData.m; sourceTree = "<group>"; };
+		7E86EEF8164D730400D0DE55 /* InstrumentsDateGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentsDateGroup.h; sourceTree = "<group>"; };
+		7E86EEF9164D730400D0DE55 /* InstrumentsDateGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentsDateGroup.m; sourceTree = "<group>"; };
+		7E86EEFA164D730400D0DE55 /* UIColor+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Random.h"; sourceTree = "<group>"; };
+		7E86EEFB164D730400D0DE55 /* UIColor+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Random.m"; sourceTree = "<group>"; };
+		7E86EEFC164D730400D0DE55 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7E86EEFD164D730400D0DE55 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7E86EF0F164D73AC00D0DE55 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		7E86EF11164D73D000D0DE55 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../Externals/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
+		7E86EF27164D743B00D0DE55 /* BTBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BTBarChart.h; path = ../../Classes/BTBarChart.h; sourceTree = "<group>"; };
+		7E86EF28164D743B00D0DE55 /* BTBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BTBarChart.m; path = ../../Classes/BTBarChart.m; sourceTree = "<group>"; };
+		7E86EF29164D743B00D0DE55 /* BTChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BTChart.h; path = ../../Classes/BTChart.h; sourceTree = "<group>"; };
+		7E86EF2A164D743B00D0DE55 /* BTChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BTChart.m; path = ../../Classes/BTChart.m; sourceTree = "<group>"; };
+		7E86EF2B164D743B00D0DE55 /* BTChartStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BTChartStyle.h; path = ../../Classes/BTChartStyle.h; sourceTree = "<group>"; };
+		7E86EF2C164D743B00D0DE55 /* BTChartStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BTChartStyle.m; path = ../../Classes/BTChartStyle.m; sourceTree = "<group>"; };
+		7E86EF2D164D743B00D0DE55 /* BTLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BTLineChart.h; path = ../../Classes/BTLineChart.h; sourceTree = "<group>"; };
+		7E86EF2E164D743B00D0DE55 /* BTLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BTLineChart.m; path = ../../Classes/BTLineChart.m; sourceTree = "<group>"; };
+		7E86EF2F164D743B00D0DE55 /* BTPlotDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BTPlotDataItem.h; path = ../../Classes/BTPlotDataItem.h; sourceTree = "<group>"; };
+		7E86EF30164D743B00D0DE55 /* BTPlotGroupDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BTPlotGroupDataItem.h; path = ../../Classes/BTPlotGroupDataItem.h; sourceTree = "<group>"; };
+		7E86EF38164D74D300D0DE55 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E86EECA164D728100D0DE55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E86EF39164D74D300D0DE55 /* QuartzCore.framework in Frameworks */,
+				7E86EF37164D747400D0DE55 /* libCorePlot-CocoaTouch.a in Frameworks */,
+				7E86EED2164D728100D0DE55 /* UIKit.framework in Frameworks */,
+				7E86EED4164D728100D0DE55 /* Foundation.framework in Frameworks */,
+				7E86EED6164D728100D0DE55 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E86EEC2164D728100D0DE55 = {
+			isa = PBXGroup;
+			children = (
+				7E86EED7164D728100D0DE55 /* BTChartsExample */,
+				7E86EED0164D728100D0DE55 /* Frameworks */,
+				7E86EECE164D728100D0DE55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E86EECE164D728100D0DE55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E86EECD164D728100D0DE55 /* BTChartsExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E86EED0164D728100D0DE55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E86EF38164D74D300D0DE55 /* QuartzCore.framework */,
+				7E86EED1164D728100D0DE55 /* UIKit.framework */,
+				7E86EED3164D728100D0DE55 /* Foundation.framework */,
+				7E86EED5164D728100D0DE55 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E86EED7164D728100D0DE55 /* BTChartsExample */ = {
+			isa = PBXGroup;
+			children = (
+				7E86EF26164D743200D0DE55 /* Classes */,
+				7E86EF51164D768600D0DE55 /* Models */,
+				7E86EEFA164D730400D0DE55 /* UIColor+Random.h */,
+				7E86EEFB164D730400D0DE55 /* UIColor+Random.m */,
+				7E86EEFC164D730400D0DE55 /* ViewController.h */,
+				7E86EEFD164D730400D0DE55 /* ViewController.m */,
+				7E86EEF4164D730400D0DE55 /* AppDelegate.h */,
+				7E86EEF5164D730400D0DE55 /* AppDelegate.m */,
+				7E86EF0E164D73AC00D0DE55 /* MainStoryboard.storyboard */,
+				7E86EF11164D73D000D0DE55 /* CorePlot-CocoaTouch.xcodeproj */,
+				7E86EED8164D728100D0DE55 /* Supporting Files */,
+			);
+			path = BTChartsExample;
+			sourceTree = "<group>";
+		};
+		7E86EED8164D728100D0DE55 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E86EED9164D728100D0DE55 /* BTChartsExample-Info.plist */,
+				7E86EEDA164D728100D0DE55 /* InfoPlist.strings */,
+				7E86EEDD164D728100D0DE55 /* main.m */,
+				7E86EEDF164D728100D0DE55 /* BTChartsExample-Prefix.pch */,
+				7E86EEE3164D728100D0DE55 /* Default.png */,
+				7E86EEE5164D728100D0DE55 /* Default@2x.png */,
+				7E86EEE7164D728100D0DE55 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E86EF1F164D73D600D0DE55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E86EF25164D73D600D0DE55 /* libCorePlot-CocoaTouch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E86EF26164D743200D0DE55 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7E86EF27164D743B00D0DE55 /* BTBarChart.h */,
+				7E86EF28164D743B00D0DE55 /* BTBarChart.m */,
+				7E86EF29164D743B00D0DE55 /* BTChart.h */,
+				7E86EF2A164D743B00D0DE55 /* BTChart.m */,
+				7E86EF2B164D743B00D0DE55 /* BTChartStyle.h */,
+				7E86EF2C164D743B00D0DE55 /* BTChartStyle.m */,
+				7E86EF2D164D743B00D0DE55 /* BTLineChart.h */,
+				7E86EF2E164D743B00D0DE55 /* BTLineChart.m */,
+				7E86EF2F164D743B00D0DE55 /* BTPlotDataItem.h */,
+				7E86EF30164D743B00D0DE55 /* BTPlotGroupDataItem.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		7E86EF51164D768600D0DE55 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E86EEF6164D730400D0DE55 /* InstrumentData.h */,
+				7E86EEF7164D730400D0DE55 /* InstrumentData.m */,
+				7E86EEF8164D730400D0DE55 /* InstrumentsDateGroup.h */,
+				7E86EEF9164D730400D0DE55 /* InstrumentsDateGroup.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E86EECC164D728100D0DE55 /* BTChartsExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E86EEF1164D728100D0DE55 /* Build configuration list for PBXNativeTarget "BTChartsExample" */;
+			buildPhases = (
+				7E86EEC9164D728100D0DE55 /* Sources */,
+				7E86EECA164D728100D0DE55 /* Frameworks */,
+				7E86EECB164D728100D0DE55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E86EF36164D746F00D0DE55 /* PBXTargetDependency */,
+			);
+			name = BTChartsExample;
+			productName = BTChartsExample;
+			productReference = 7E86EECD164D728100D0DE55 /* BTChartsExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E86EEC4164D728100D0DE55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Brightec Ltd";
+			};
+			buildConfigurationList = 7E86EEC7164D728100D0DE55 /* Build configuration list for PBXProject "BTChartsExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7E86EEC2164D728100D0DE55;
+			productRefGroup = 7E86EECE164D728100D0DE55 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7E86EF1F164D73D600D0DE55 /* Products */;
+					ProjectRef = 7E86EF11164D73D000D0DE55 /* CorePlot-CocoaTouch.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				7E86EECC164D728100D0DE55 /* BTChartsExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7E86EF25164D73D600D0DE55 /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = 7E86EF24164D73D600D0DE55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E86EECB164D728100D0DE55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E86EEDC164D728100D0DE55 /* InfoPlist.strings in Resources */,
+				7E86EEE4164D728100D0DE55 /* Default.png in Resources */,
+				7E86EEE6164D728100D0DE55 /* Default@2x.png in Resources */,
+				7E86EEE8164D728100D0DE55 /* Default-568h@2x.png in Resources */,
+				7E86EF10164D73AC00D0DE55 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E86EEC9164D728100D0DE55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E86EEDE164D728100D0DE55 /* main.m in Sources */,
+				7E86EEFE164D730400D0DE55 /* AppDelegate.m in Sources */,
+				7E86EEFF164D730400D0DE55 /* InstrumentData.m in Sources */,
+				7E86EF00164D730400D0DE55 /* InstrumentsDateGroup.m in Sources */,
+				7E86EF01164D730400D0DE55 /* UIColor+Random.m in Sources */,
+				7E86EF02164D730400D0DE55 /* ViewController.m in Sources */,
+				7E86EF31164D743B00D0DE55 /* BTBarChart.m in Sources */,
+				7E86EF32164D743B00D0DE55 /* BTChart.m in Sources */,
+				7E86EF33164D743B00D0DE55 /* BTChartStyle.m in Sources */,
+				7E86EF34164D743B00D0DE55 /* BTLineChart.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E86EF36164D746F00D0DE55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CorePlot-CocoaTouch";
+			targetProxy = 7E86EF35164D746F00D0DE55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7E86EEDA164D728100D0DE55 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E86EEDB164D728100D0DE55 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7E86EF0E164D73AC00D0DE55 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E86EF0F164D73AC00D0DE55 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E86EEEF164D728100D0DE55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		7E86EEF0164D728100D0DE55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E86EEF2164D728100D0DE55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BTChartsExample/BTChartsExample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "Externals/framework/**";
+				INFOPLIST_FILE = "BTChartsExample/BTChartsExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7E86EEF3164D728100D0DE55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BTChartsExample/BTChartsExample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "Externals/framework/**";
+				INFOPLIST_FILE = "BTChartsExample/BTChartsExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E86EEC7164D728100D0DE55 /* Build configuration list for PBXProject "BTChartsExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E86EEEF164D728100D0DE55 /* Debug */,
+				7E86EEF0164D728100D0DE55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E86EEF1164D728100D0DE55 /* Build configuration list for PBXNativeTarget "BTChartsExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E86EEF2164D728100D0DE55 /* Debug */,
+				7E86EEF3164D728100D0DE55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E86EEC4164D728100D0DE55 /* Project object */;
+}
