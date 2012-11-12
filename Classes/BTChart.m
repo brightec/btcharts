@@ -44,23 +44,19 @@
 
 - (void)setupGraph
 {
+    if (self.styleClassName != nil && [NSClassFromString(_styleClassName) isSubclassOfClass:[BTChartStyle class]]) {
+        self.style = [[NSClassFromString(_styleClassName) alloc] init];
+    }
+
     // create graph
-    self.graph = [[CPTXYGraph alloc] initWithFrame:self.bounds];    
-    self.graph.paddingBottom = 10.0f;
-    self.graph.paddingTop = 10.0f;
-    self.graph.paddingLeft = 10.0f;
-    self.graph.paddingRight = 10.0f;
+    self.graph = (CPTXYGraph *)[self.style newGraph];
     self.graph.title  = self.chartTitle;
     self.graph.titleTextStyle = [self.style graphTitleTextStyle];
     self.graph.titleDisplacement = CGPointMake(0, -30);
-    [self.graph applyTheme:[CPTTheme themeNamed:kCPTDarkGradientTheme]];
     self.hostedGraph = self.graph;
 
-    // add some padding to allow space for axis, title and legend
-    self.graph.plotAreaFrame.paddingLeft = 70.0f;
-    self.graph.plotAreaFrame.paddingTop = 60.0f;
-    self.graph.plotAreaFrame.paddingBottom = 50.0f;
-    self.graph.plotAreaFrame.paddingRight = 50.0f;
+    CPTXYAxis *y = [self yAxis];
+    y.majorGridLineStyle = [self.style gridLineStyle];
 }
 
 
@@ -86,10 +82,12 @@
 
 	// Adjust visible ranges so plot symbols along the edges are not clipped
 	CPTMutablePlotRange *xRange = [plotSpace.xRange mutableCopy];
-	CPTMutablePlotRange *yRange = [plotSpace.yRange mutableCopy];
     xRange.location = CPTDecimalFromFloat(-0.5f);
     xRange.length = CPTDecimalAdd(xRange.length, CPTDecimalFromFloat(1.0f));
 
+	CPTMutablePlotRange *yRange = [plotSpace.yRange mutableCopy];
+
+    
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
     CPTXYAxis *x = axisSet.xAxis;
     CPTXYAxis *y = axisSet.yAxis;
@@ -109,10 +107,11 @@
     // range is not disabled any bigger as we restricted it using he
     // visible range property.
 	[xRange expandRangeByFactor:CPTDecimalFromDouble(1.05)];
-	[yRange expandRangeByFactor:CPTDecimalFromDouble(1.1)];
+	[yRange expandRangeByFactor:CPTDecimalFromDouble(1.3)];
 	plotSpace.xRange = xRange;
 	plotSpace.yRange = yRange;
 }
+
 
 - (void)addHorizontalLegendAtPosition:(CPTRectAnchor)position
 {
@@ -153,12 +152,12 @@
 
     switch (position) {
         case CPTRectAnchorLeft:
-            self.graph.plotAreaFrame.paddingLeft += 100.0f;
+            self.graph.plotAreaFrame.paddingLeft += 70.0f;
             self.graph.legendDisplacement = CGPointMake(40, 0);
             break;
 
         case CPTRectAnchorRight:
-            self.graph.plotAreaFrame.paddingRight += 100.0f;
+            self.graph.plotAreaFrame.paddingRight += 70.0f;
             self.graph.legendDisplacement = CGPointMake(-40, 0);
             break;
 
@@ -172,16 +171,6 @@
 {
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
     CPTXYAxis *x = axisSet.xAxis;
-    {
-        x.majorIntervalLength		  = CPTDecimalFromInteger(1);
-        x.majorTickLength             = 25;
-        x.minorTicksPerInterval		  = 0;
-        x.axisLineStyle				  = [self.style axisLineStyle];
-        x.majorTickLineStyle		  = [self.style axisMajorTickLineStyle];
-        x.minorTickLineStyle		  = [self.style axisMinorTickLineStyle];
-        x.labelingPolicy              = CPTAxisLabelingPolicyAutomatic;
-    }
-
     return x;
 }
 
@@ -190,16 +179,6 @@
 {
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
     CPTXYAxis *y = axisSet.yAxis;
-    {
-        y.labelingPolicy              = CPTAxisLabelingPolicyAutomatic;
-        y.majorTickLength             = 25;
-        y.minorTicksPerInterval       = 0;
-        y.axisLineStyle				  = [self.style axisLineStyle];
-        y.majorTickLineStyle		  = [self.style axisMajorTickLineStyle];
-        y.minorTickLineStyle		  = [self.style axisMinorTickLineStyle];
-        y.labelingPolicy              = CPTAxisLabelingPolicyAutomatic;
-    }
-
     return y;
 }
 

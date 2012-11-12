@@ -55,6 +55,8 @@
         barPlot.identifier = @(i);
         barPlot.barCornerRadius = 5.0f;
         barPlot.title = plotDataItem.label;
+        barPlot.labelOffset = 1;
+        barPlot.labelTextStyle = [self.style plotLabelTextStyle];
 
         // set the widths of the plots and offsets to group plots together in a group
         float dataUnitPerPlot = 1.0/plotCount;
@@ -91,7 +93,6 @@
     CPTXYAxis *x = [self xAxis];
     x.labelingPolicy = CPTAxisLabelingPolicyNone;
     x.axisLabels = [self xAxisLabels];
-    [self yAxis];
 
     [self setupPlotSpace];
 }
@@ -129,17 +130,11 @@
 
 
 -(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index
-{
-	static CPTMutableTextStyle *whiteText = nil;
-	if  (!whiteText) {
-		whiteText		= [[CPTMutableTextStyle alloc] init];
-		whiteText.color = [CPTColor whiteColor];
-	}
-    
+{   
     NSInteger plotItemIndex = [((NSNumber *)plot.identifier) integerValue];
     id<BTPlotDataItem> a = [self.dataSource chart:self dataItemForIndexPath:[NSIndexPath indexPathForRow:plotItemIndex inSection:index]];
     
-    return [[CPTTextLayer alloc] initWithText:[NSString stringWithFormat:@"%i", a.value] style:whiteText];
+    return [[CPTTextLayer alloc] initWithText:[NSString stringWithFormat:@"%i", a.value] style:self.style.plotLabelTextStyle];
 }
 
 

@@ -10,7 +10,7 @@
 #import "CorePlot-CocoaTouch.h"
 
 
-@interface BTChartStyle : NSObject
+@interface BTChartStyle : CPTTheme
 
 - (CPTMutableLineStyle *)axisLineStyle;
 - (CPTMutableLineStyle *)axisMajorTickLineStyle;
@@ -19,5 +19,12 @@
 - (CPTMutableTextStyle *)axisLabelTextStyle;
 - (CPTMutableTextStyle *)graphTitleTextStyle;
 - (CPTMutableTextStyle *)legendTextStyle;
+- (CPTMutableTextStyle *)plotLabelTextStyle;
+- (CPTFill *)backgroundFill;
+
+- (CGFloat)paddingTop;
+- (CGFloat)paddingRight;
+- (CGFloat)paddingBottom;
+- (CGFloat)paddingLeft;
 
 @end
