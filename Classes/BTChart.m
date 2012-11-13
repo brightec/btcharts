@@ -183,4 +183,10 @@
 }
 
 
+- (void)reloadData
+{
+    [self.graph reloadData];
+}
+
+
 @end

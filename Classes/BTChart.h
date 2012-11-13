@@ -42,6 +42,8 @@
 - (void)addHorizontalLegendAtPosition:(CPTRectAnchor)position;
 - (void)addVerticalLegendAtPosition:(CPTRectAnchor)position;
 
+- (void)reloadData;
+
 @end
 
 
