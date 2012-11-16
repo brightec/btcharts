@@ -9,8 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @protocol BTPlotDataItem <NSObject>
-@property (nonatomic, copy) NSString *label;
+
+// plot type label (normally used for the legend)
+@property (nonatomic, copy) NSString *plotTypeLabel;
+
+// label that is normally shown above the plot item
+@property (nonatomic, copy) NSString *dataLabel;
+
+// value
 @property (nonatomic) NSUInteger value;
+
+// styling properties
 @property (nonatomic, strong) UIColor *startGradientColour;
 @property (nonatomic, strong) UIColor *endGradientColour;
 @end

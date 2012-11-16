@@ -17,6 +17,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.style = [[BTChartStyle alloc] init];
+        _allowDecimalsOnAxis = YES;
     }
     return self;
 }
@@ -27,6 +28,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.style = [[BTChartStyle alloc] init];
+        _allowDecimalsOnAxis = YES;        
     }
     return self;
 }
@@ -57,6 +59,11 @@
 
     CPTXYAxis *y = [self yAxis];
     y.majorGridLineStyle = [self.style gridLineStyle];
+    y.delegate = self;
+
+    if (self.yAxisLabelFormatter != nil) {
+        y.labelFormatter = self.yAxisLabelFormatter;
+    }
 }
 
 
@@ -87,7 +94,6 @@
 
 	CPTMutablePlotRange *yRange = [plotSpace.yRange mutableCopy];
 
-    
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
     CPTXYAxis *x = axisSet.xAxis;
     CPTXYAxis *y = axisSet.yAxis;
@@ -185,8 +191,39 @@
 
 - (void)reloadData
 {
+    CPTXYAxis *x = [self xAxis];
+    x.axisLabels = [self xAxisLabels];
+
+    CPTXYAxis *y = [self yAxis];
+    if (!self.allowDecimalsOnAxis) {
+        y.labelingPolicy = CPTAxisLabelingPolicyAutomatic;
+    }
+
     [self.graph reloadData];
+    [self setupPlotSpace];
 }
 
+# pragma mark -
+# pragma mark CPTAxisDelegate
+
+-(void)axisDidRelabel:(CPTAxis *)axis
+{
+    if (self.allowDecimalsOnAxis || axis != [self yAxis]) {
+        return;
+    }
+
+    NSMutableSet *newLocations = [@[] mutableCopy];
+    for (NSDecimalNumber *l in axis.majorTickLocations) {
+        float lf = [l floatValue];
+        if (lf == (int)lf) {
+            [newLocations addObject:l];
+        }
+    }
+
+    if (newLocations.count < axis.majorTickLocations.count) {
+        axis.labelingPolicy = CPTAxisLabelingPolicyLocationsProvided;
+        axis.majorTickLocations = newLocations;
+    }
+}
 
 @end

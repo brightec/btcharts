@@ -14,9 +14,6 @@
 
 
 @protocol BTLineChartDataSource <BTChartDataSource>
-
 @optional
-
 - (UIColor *)lineChart:(BTLineChart *)lineChart lineColourForPlotItem:(NSInteger)item;
-
 @end

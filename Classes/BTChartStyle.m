@@ -156,7 +156,6 @@ NSString *const kBTDefaultTheme = @"BT Default";
 {
     axis.labelingPolicy              = CPTAxisLabelingPolicyAutomatic;
     axis.majorIntervalLength         = CPTDecimalFromDouble(1.0);
-    axis.orthogonalCoordinateDecimal = CPTDecimalFromDouble(0.0);
     axis.tickDirection               = CPTSignNone;
     axis.minorTicksPerInterval       = 4;
     axis.majorTickLineStyle          = [self axisMajorTickLineStyle];

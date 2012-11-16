@@ -71,7 +71,7 @@
         plot.dataLineStyle = dataLineStyle;
         plot.dataSource = self;
         plot.identifier = @(i);
-        plot.title = plotDataItem.label;
+        plot.title = plotDataItem.plotTypeLabel;
         plot.plotSymbol = plotSymbol;
         plot.labelOffset = 5;
         plot.labelTextStyle = [self.style plotLabelTextStyle];
@@ -83,6 +83,9 @@
     CPTXYAxis *x = [self xAxis];
     x.labelingPolicy = CPTAxisLabelingPolicyNone;
     x.axisLabels = [self xAxisLabels];
+
+    CPTXYAxis *y = [self yAxis];
+    y.minorTicksPerInterval = 0;
 
     [self setupPlotSpace];
 }
@@ -124,7 +127,7 @@
     NSInteger plotItemIndex = [((NSNumber *)plot.identifier) integerValue];
     id<BTPlotDataItem> a = [self.dataSource chart:self dataItemForIndexPath:[NSIndexPath indexPathForRow:plotItemIndex inSection:index]];
 
-    return [[CPTTextLayer alloc] initWithText:[NSString stringWithFormat:@"%i", a.value] style:self.style.plotLabelTextStyle];
+    return [[CPTTextLayer alloc] initWithText:a.dataLabel style:self.style.plotLabelTextStyle];
 }
 
 

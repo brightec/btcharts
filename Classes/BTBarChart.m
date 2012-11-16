@@ -54,7 +54,7 @@
         barPlot.dataSource = self;
         barPlot.identifier = @(i);
         barPlot.barCornerRadius = 5.0f;
-        barPlot.title = plotDataItem.label;
+        barPlot.title = plotDataItem.plotTypeLabel;
         barPlot.labelOffset = 1;
         barPlot.labelTextStyle = [self.style plotLabelTextStyle];
 
@@ -90,9 +90,14 @@
 
     [self addHorizontalLegendAtPosition:CPTRectAnchorBottom];
 
+
     CPTXYAxis *x = [self xAxis];
     x.labelingPolicy = CPTAxisLabelingPolicyNone;
     x.axisLabels = [self xAxisLabels];
+
+    CPTXYAxis *y = [self yAxis];
+    y.minorTicksPerInterval = 0;
+    y.orthogonalCoordinateDecimal = CPTDecimalFromInt(0);
 
     [self setupPlotSpace];
 }
@@ -134,7 +139,7 @@
     NSInteger plotItemIndex = [((NSNumber *)plot.identifier) integerValue];
     id<BTPlotDataItem> a = [self.dataSource chart:self dataItemForIndexPath:[NSIndexPath indexPathForRow:plotItemIndex inSection:index]];
     
-    return [[CPTTextLayer alloc] initWithText:[NSString stringWithFormat:@"%i", a.value] style:self.style.plotLabelTextStyle];
+    return [[CPTTextLayer alloc] initWithText:a.dataLabel style:self.style.plotLabelTextStyle];
 }
 
 

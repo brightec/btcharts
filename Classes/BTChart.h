@@ -15,7 +15,7 @@
 @protocol BTChartDataSource;
 
 
-@interface BTChart : CPTGraphHostingView
+@interface BTChart : CPTGraphHostingView <CPTAxisDelegate>
 @property (nonatomic, weak) IBOutlet id<BTChartDataSource>dataSource;
 @property (nonatomic, copy) NSString *chartTitle;
 @property (nonatomic, strong) CPTGraph *graph;
@@ -34,6 +34,9 @@
 - (void)setupPlotSpace;
 
 // axis
+@property (nonatomic, strong) NSNumberFormatter *yAxisLabelFormatter;
+@property (nonatomic) BOOL allowDecimalsOnAxis;
+
 - (CPTXYAxis *)xAxis;
 - (CPTXYAxis *)yAxis;
 - (NSSet *)xAxisLabels;
