@@ -9,11 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "BTChart.h"
 
+@protocol BTLineChartDelegate;
+
+
 @interface BTLineChart : BTChart <CPTScatterPlotDataSource>
+@property (nonatomic, weak) IBOutlet id<BTLineChartDelegate>delegate;
 @end
 
 
-@protocol BTLineChartDataSource <BTChartDataSource>
+@protocol BTLineChartDelegate <NSObject>
 @optional
 - (UIColor *)lineChart:(BTLineChart *)lineChart lineColourForPlotItem:(NSInteger)item;
+- (void)lineChart:(BTLineChart *)barChart willDisplayPlotItem:(CPTScatterPlot *)scatterPlot;
 @end

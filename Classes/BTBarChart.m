@@ -74,8 +74,8 @@
         barPlot.lineStyle = barLineStyle;
         
         // fill the bar with a gradient if colours are available from datasource
-        if ([self.dataSource respondsToSelector:@selector(barChart:startAndEndGradientColorsForPlotItem:)]) {
-            NSArray *gradient = [(id)self.dataSource barChart:self startAndEndGradientColorsForPlotItem:i];
+        if ([self.delegate respondsToSelector:@selector(barChart:startAndEndGradientColorsForPlotItem:)]) {
+            NSArray *gradient = [(id)self.delegate barChart:self startAndEndGradientColorsForPlotItem:i];
             if (gradient.count == 2) {
                 UIColor *startColour = (UIColor *)gradient[0];
                 UIColor *endColour = (UIColor *)gradient[1];
@@ -83,6 +83,10 @@
                 CPTGradient *fillGradient = [CPTGradient gradientWithBeginningColor:[CPTColor colorWithCGColor:startColour.CGColor] endingColor:[CPTColor colorWithCGColor:endColour.CGColor]];
                 barPlot.fill = [CPTFill fillWithGradient:fillGradient];
             }
+        }
+                
+        if ([self.dataSource respondsToSelector:@selector(barChart:willDisplayPlotItem:)]) {
+            [self.delegate barChart:self willDisplayPlotItem:barPlot];
         }
         
         [self.graph addPlot:barPlot];

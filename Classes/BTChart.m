@@ -54,8 +54,12 @@
     self.graph = (CPTXYGraph *)[self.style newGraph];
     self.graph.title  = self.chartTitle;
     self.graph.titleTextStyle = [self.style graphTitleTextStyle];
-    self.graph.titleDisplacement = CGPointMake(0, -30);
+    self.graph.titleDisplacement = CGPointMake(0, -20);
     self.hostedGraph = self.graph;
+    
+    if (self.chartTitle.length > 0) {
+        self.graph.plotAreaFrame.paddingTop += 20.0f;
+    }
 
     CPTXYAxis *y = [self yAxis];
     y.majorGridLineStyle = [self.style gridLineStyle];
@@ -136,8 +140,8 @@
             break;
 
         case CPTRectAnchorBottom:
-            self.graph.plotAreaFrame.paddingBottom += 35.0f;
-            self.graph.legendDisplacement = CGPointMake(0, 30);
+            self.graph.plotAreaFrame.paddingBottom += 65.0f;
+            self.graph.legendDisplacement = CGPointMake(0, 0);
             break;
 
         default:
@@ -159,12 +163,12 @@
     switch (position) {
         case CPTRectAnchorLeft:
             self.graph.plotAreaFrame.paddingLeft += 70.0f;
-            self.graph.legendDisplacement = CGPointMake(40, 0);
+            self.graph.legendDisplacement = CGPointMake(0, 0);
             break;
 
         case CPTRectAnchorRight:
             self.graph.plotAreaFrame.paddingRight += 70.0f;
-            self.graph.legendDisplacement = CGPointMake(-40, 0);
+            self.graph.legendDisplacement = CGPointMake(0, 0);
             break;
 
         default:

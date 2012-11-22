@@ -33,8 +33,9 @@ NSString *const kBTDefaultTheme = @"BT Default";
 {
     CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
     textStyle.color = [CPTColor blackColor];
-    textStyle.fontSize = 16.0f;
-    textStyle.fontName = @"Helvetica";
+    textStyle.fontSize = 18.0f;
+    textStyle.fontName = @"Helvetica-Bold";
+    
     return textStyle;
 }
 
@@ -111,25 +112,25 @@ NSString *const kBTDefaultTheme = @"BT Default";
 
 - (CGFloat)paddingTop
 {
-    return 60.0f;
+    return 0.0f;
 }
 
 
 - (CGFloat)paddingRight
 {
-    return 50.0f;
+    return 0.0f;
 }
 
 
 - (CGFloat)paddingBottom
 {
-    return 50.0f;
+    return 0.0f;
 }
 
 
 - (CGFloat)paddingLeft
 {
-    return 70.0f;
+    return 0.0f;
 }
 
 
@@ -200,6 +201,8 @@ NSString *const kBTDefaultTheme = @"BT Default";
     plotAreaFrame.paddingTop = self.paddingTop;
     plotAreaFrame.paddingBottom = self.paddingBottom;
     plotAreaFrame.paddingRight = self.paddingRight;
+    plotAreaFrame.masksToBounds = NO;
+    plotAreaFrame.masksToBorder = NO;
 }
 
 

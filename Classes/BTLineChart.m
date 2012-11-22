@@ -61,8 +61,8 @@
         dataLineStyle.lineWidth = 5.0f;
 
         // set the line colour based on value from datasource
-        if ([self.dataSource respondsToSelector:@selector(lineChart:lineColourForPlotItem:)]) {
-            UIColor *lineColour = [(id)self.dataSource lineChart:self lineColourForPlotItem:i];
+        if ([self.delegate respondsToSelector:@selector(lineChart:lineColourForPlotItem:)]) {
+            UIColor *lineColour = [(id)self.delegate lineChart:self lineColourForPlotItem:i];
             dataLineStyle.lineColor = [CPTColor colorWithCGColor:lineColour.CGColor];
         }
 
@@ -75,6 +75,11 @@
         plot.plotSymbol = plotSymbol;
         plot.labelOffset = 5;
         plot.labelTextStyle = [self.style plotLabelTextStyle];
+        
+        if ([self.delegate respondsToSelector:@selector(lineChart:willDisplayPlotItem:)]) {
+            [self.delegate lineChart:self willDisplayPlotItem:plot];
+        }
+        
         [self.graph addPlot:plot];
     }
 
