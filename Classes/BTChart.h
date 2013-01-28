@@ -20,7 +20,6 @@
 @property (nonatomic, copy) NSString *chartTitle;
 @property (nonatomic, strong) CPTGraph *graph;
 @property (nonatomic, strong) BTChartStyle *style;
-@property (nonatomic, copy) NSString *styleClassName;
 
 
 // configures basic aspects of the graph that is common to all

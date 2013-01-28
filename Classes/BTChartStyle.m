@@ -102,7 +102,7 @@ NSString *const kBTDefaultTheme = @"BT Default";
 
 - (CPTFill *)backgroundFill
 {
-    return [CPTFill fillWithColor:[CPTColor colorWithCGColor:[UIColor redColor].CGColor]];
+    return [CPTFill fillWithColor:[CPTColor clearColor]];
 }
 
 

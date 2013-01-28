@@ -88,7 +88,7 @@
         if ([self.dataSource respondsToSelector:@selector(barChart:willDisplayPlotItem:)]) {
             [self.delegate barChart:self willDisplayPlotItem:barPlot];
         }
-        
+
         [self.graph addPlot:barPlot];
     }
 

@@ -46,19 +46,15 @@
 
 - (void)setupGraph
 {
-    if (self.styleClassName != nil && [NSClassFromString(_styleClassName) isSubclassOfClass:[BTChartStyle class]]) {
-        self.style = [[NSClassFromString(_styleClassName) alloc] init];
-    }
-
     // create graph
     self.graph = (CPTXYGraph *)[self.style newGraph];
     self.graph.title  = self.chartTitle;
     self.graph.titleTextStyle = [self.style graphTitleTextStyle];
-    self.graph.titleDisplacement = CGPointMake(0, -20);
+//    self.graph.titleDisplacement = CGPointMake(0, -20);
     self.hostedGraph = self.graph;
     
     if (self.chartTitle.length > 0) {
-        self.graph.plotAreaFrame.paddingTop += 20.0f;
+        self.graph.plotAreaFrame.paddingTop += 30.0f;
     }
 
     CPTXYAxis *y = [self yAxis];
