@@ -142,6 +142,10 @@
 {   
     NSInteger plotItemIndex = [((NSNumber *)plot.identifier) integerValue];
     id<BTPlotDataItem> a = [self.dataSource chart:self dataItemForIndexPath:[NSIndexPath indexPathForRow:plotItemIndex inSection:index]];
+
+    if ([a.dataLabel isEqualToString:@"0"]) {
+        return [[CPTTextLayer alloc] initWithText:@"" style:self.style.plotLabelTextStyle];
+    }
     
     return [[CPTTextLayer alloc] initWithText:a.dataLabel style:self.style.plotLabelTextStyle];
 }

@@ -90,7 +90,8 @@
 	// Adjust visible ranges so plot symbols along the edges are not clipped
 	CPTMutablePlotRange *xRange = [plotSpace.xRange mutableCopy];
     xRange.location = CPTDecimalFromFloat(-0.5f);
-    xRange.length = CPTDecimalAdd(xRange.length, CPTDecimalFromFloat(1.0f));
+    //xRange.length = CPTDecimalAdd(xRange.length, CPTDecimalFromFloat(1.0f));
+    xRange.length = CPTDecimalFromInt([self.dataSource numberOfPlotGroupsInChart:self]);
 
 	CPTMutablePlotRange *yRange = [plotSpace.yRange mutableCopy];
 
